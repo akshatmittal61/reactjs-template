@@ -4,6 +4,8 @@ const GlobalContext = createContext({
 	breakpoint: () => {},
 	isLoading: "",
 	setIsLoading: () => {},
+	isAuthenticated: "",
+	setIsAuthenticated: () => {},
 	axiosInstance: undefined,
 });
 

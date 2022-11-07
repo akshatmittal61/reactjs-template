@@ -5,6 +5,9 @@ export const useContextData = () => {
 	// Loading State
 	const [isLoading, setIsLoading] = useState(false);
 
+	// Global Authentication State
+	const [isAuthenticated, setIsAuthenticated] = useState(false);
+
 	// Axios Instance Configurations
 	const axiosInstance = axios.create({
 		baseURL: process.env.REACT_APP_BACKEND_URL,
@@ -31,6 +34,8 @@ export const useContextData = () => {
 		breakpoint,
 		isLoading,
 		setIsLoading,
+        isAuthenticated,
+        setIsAuthenticated,
 		axiosInstance,
 	};
 };

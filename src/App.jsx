@@ -7,14 +7,22 @@ import "aos/dist/aos.css";
 import "./style.scss";
 import { useContextData } from "./context/useContext";
 import GlobalContext from "./context/GlobalContext";
+import routes from "./routes";
 
 const Wrapper = () => {
 	AOS.init();
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="*" element={<NotFound />} />
+				{routes.map((route, index) => {
+					return (
+						<Route
+							key={index}
+							path={route.path}
+							element={route.component}
+						/>
+					);
+				})}
 			</Routes>
 		</>
 	);
