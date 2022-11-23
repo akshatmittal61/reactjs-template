@@ -5,7 +5,7 @@ This is a template repository for React.js projects.
 ## Features
 
 -   [x] React.js
--   [x] ESLint
+-   [x] Sass
 -   [x] Prettier
 
 ## Usage
