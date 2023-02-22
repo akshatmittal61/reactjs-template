@@ -34,8 +34,8 @@ export const useContextData = () => {
 		breakpoint,
 		isLoading,
 		setIsLoading,
-        isAuthenticated,
-        setIsAuthenticated,
+		isAuthenticated,
+		setIsAuthenticated,
 		axiosInstance,
 	};
 };

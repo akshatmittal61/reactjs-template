@@ -1,3 +1,4 @@
+import React from "react";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Home from "./pages/Home/Home";
@@ -10,16 +11,7 @@ const protectedRoutes = [
 	},
 ];
 
-const routes = [
-	...protectedRoutes.map((route) => ({
-		path: route.path,
-		component: (
-			<PrivateRoute>
-				{route.component}
-			</PrivateRoute>
-		)
-	})
-	),
+const nonProtectedRoutes = [
 	{
 		path: "/",
 		component: <Home />,
@@ -29,5 +21,12 @@ const routes = [
 		component: <NotFound />,
 	},
 ];
+
+const routes = protectedRoutes
+	.map((route) => ({
+		...route,
+		component: <PrivateRoute>{route.component}</PrivateRoute>,
+	}))
+	.concat(nonProtectedRoutes);
 
 export default routes;
